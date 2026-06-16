@@ -8,24 +8,19 @@
   }
 
   /* ini navbar */
-  .nav{
+    .nav{
       box-shadow: 0 2px 12px rgba(0,0,0,0.08);
       width: 100%;
-      padding: 1rem 4%;
-      background: linear-gradient(
-      90deg,
-      #0f4c75,
-      #0f766e
-      );
+      padding: 0.8rem 4%;
+      background: linear-gradient(90deg,#0f4c75,#0f766e);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(15px);
       display: grid;
-      grid-template-columns: 1fr auto;
-      justify-content: space-between;
+      grid-template-columns: auto 1fr auto;
       align-items: center;
       position: fixed;
       z-index: 1000;
-  }
+    }
   .logo{
       display: flex;
       align-items: center;
@@ -61,16 +56,15 @@
       font-weight: 600;
       position: relative;
   }
-  .nav-links{
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+    .nav-links{
       list-style: none;
       display: flex;
       justify-content: center;
       gap: 2rem;
-      left: 50%;
-  }
+      justify-self: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
   .nav-links li a {
       position: relative;
       font-size: 1.02rem;
@@ -86,6 +80,22 @@
       color: #0d3956 ;
       text-shadow: 0 0 10px rgba(227, 227, 227, 0.226);
   }
+
+/* Active nav link */
+.nav-links li a.active{
+  color: #10b981;
+  font-weight: 700;
+}
+.nav-links li a.active::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 3px;
+  background: #10b981;
+  border-radius: 3px;
+}
   .btns{
       display: flex;
   }
@@ -117,9 +127,9 @@
       #2ec4b5bc 100%
     );
     color: white;
-    padding: 140px 8% 100px;
+    padding: 120px 6% 80px;
     display: grid;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     align-items: center;
     gap: 48px;
     overflow: hidden;
@@ -207,26 +217,27 @@
     width: 100%;
     max-width: 420px;
     filter: drop-shadow(0 25px 42px rgba(0,0,0,0.35));
+    height: auto;
   }
   /* ini bawah hero */
-  .dashboard{
+    .dashboard{
       position: relative;
       width: 100%;
-      padding: 60px 8%;
+      padding: 60px 6%;
       display: grid;
-      grid-template-columns: repeat(3, minmax(220px, 260px));
-      justify-content: center;  
-      gap: 75px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
       background: white;
       margin-top: -40px;
-  }
+    }
   .stat-card1{
       padding: 35px ;
       border-radius: 8px;
       text-align: center;
       border: 1px solid rgba(16,185,129,0.18);
-      width: 20rem;
-      height: 9rem;
+      width: 100%;
+      max-width: 360px;
+      min-height: 9rem;
         background: linear-gradient(
       135deg,
       rgba(34,197,94,0.18),
@@ -319,7 +330,7 @@
   }
   .profile-grid{
     display: grid;
-    grid-template-columns: repeat(3, 320px);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 24px;
     justify-content: center;
     margin-top: 48px;
@@ -341,13 +352,14 @@
       transform: translateY(-6px);
       box-shadow: 0 12px 30px rgba(0,0,0,0.40);
   }
-  .container-profile img{
+    .container-profile img{
       width: 100%;
-      height: 280px;
+      height: auto;
+      max-height: 320px;
       object-fit: cover;
       border-radius: 16px;
       margin-bottom: 16px;
-  }
+    }
   .container-profile h3{
       font-size: 22px;
       font-weight: 400;
@@ -454,8 +466,8 @@
   }
   .grid-program{
     display: grid;
-    grid-template-columns: repeat(3, 435px);
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
     justify-content: center;
   }
 
@@ -467,7 +479,7 @@
     );
     border-radius: 16px;
     padding: 20px;
-    width: 435px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     font-family: "Poppins", sans-serif;
@@ -604,8 +616,8 @@
   }
   .grid-pencapaian{
     display: grid;
-    grid-template-columns: repeat(2,700px);
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
     justify-content: center;
   }
   .judul-pencapaian{
@@ -640,7 +652,7 @@
     background:#DBEAFE;
     border-radius: 16px;
     padding: 25px;
-    width: 700px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     font-family: "Poppins", sans-serif;
@@ -744,12 +756,12 @@
   /* program penunjang and eskul */
   .mix{
     background: white;
-    padding: 80px 6%;
+    padding: 60px 6%;
     position: relative;
     display: grid;
     align-items: start;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 36px; 
     text-align: left;
     font-family: "Poppins", sans-serif;
   }
@@ -788,7 +800,7 @@
   }
   .program-grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 16px;
   }
   .item-card{
@@ -825,7 +837,7 @@
   }
   .extra-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 16px;
   }
   .extra-card{
@@ -906,10 +918,10 @@
   }
   .cards-grid{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
     justify-items: center;
-    margin-top: 40px;
+    margin-top: 24px;
   }
   .cards{
       background: white;
@@ -1034,8 +1046,8 @@
   }
   .grid-kontak{
     display: grid;
-    grid-template-columns: repeat(2,700px);
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
     justify-content: center;
   }
   .judul-kontak{
@@ -1069,8 +1081,8 @@
   .informasi{
     background:whitesmoke;
     border-radius: 16px;
-    padding: 25px;
-    width: 650px;
+    padding: 20px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1168,8 +1180,42 @@
   }
   .media-grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 16px;
+  }
+
+  /* Responsive breakpoints */
+  @media (max-width: 1024px) {
+    .Main{ font-size: 36px; }
+    .Slogan{ font-size: 24px; }
+    .Deks{ font-size: 17px; }
+    .hero-image img{ max-width: 360px; }
+  }
+
+  @media (max-width: 768px) {
+    .nav{ padding: 0.6rem 3%; }
+    .nav-links{ gap: 1rem; }
+    .Main{ font-size: 30px; }
+    .Slogan{ font-size: 20px; }
+    .Beranda{ padding: 90px 4% 60px; gap: 24px; }
+    .hero-image img{ max-width: 300px; }
+    .dashboard{ padding: 40px 4%; }
+    .judul-profile h2, .judul-program h2, .judul-pencapaian h2, .judul-fasilitas h2, .judul-kontak h2{ font-size: 28px; }
+    .btn-bergabung{ padding: 1rem 3rem; }
+  }
+
+  @media (max-width: 480px) {
+    .nav{ padding: 0.5rem 3%; }
+    .nav-links{ gap: 0.6rem; font-size: 14px; }
+    .logo-img{ height: 40px; }
+    .Main{ font-size: 24px; }
+    .Slogan{ font-size: 18px; }
+    .Beranda{ padding: 70px 3% 40px; }
+    .hero-image img{ max-width: 220px; }
+    .btn-daftar, .btn-program{ padding: 0.8rem 1rem; }
+    .grid-tj{ grid-template-columns: 1fr; }
+    .btn-bergabung{ padding: 0.9rem 2rem; }
+    .nav-links{ width: 100%; justify-content: flex-end; }
   }
   .media-card{
     background: #c4c6c83d;
@@ -1198,6 +1244,84 @@
   .media-card.yt i{ color:#ff0000; }
   .media-card.tt i{ color:#000; }
   .media-card.ig i{ color:#e1306c; }
+
+/* Responsive tweaks */
+img, iframe, .hero-image img, .container-profile img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile-first: make large fixed grids adapt */
+@media (max-width: 1024px) {
+  .Beranda {
+    grid-template-columns: 1fr;
+    padding: 120px 6% 60px;
+    gap: 24px;
+  }
+  .hero-image { order: 2; }
+  .hero-text { order: 1; }
+
+  .dashboard,
+  .profile-grid,
+  .grid-program,
+  .grid-pencapaian,
+  .extra-grid,
+  .cards-grid,
+  .grid-kontak,
+  .mix,
+  .media-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding-inline: 6%;
+  }
+
+  .stat-card1, .stat-card2, .stat-card3,
+  .container-program-fiqh, .container-program-ahkam, .container-program-quran,
+  .container-formal, .container-salaf, .informasi, .cards, .item-card, .extra-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .nav {
+    grid-template-columns: 1fr;
+    padding: 0.75rem 5%;
+  }
+  .nav-links{
+    position: static;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .btns{ display: none; }
+}
+
+@media (max-width: 768px) {
+  .Main{ font-size: 32px; }
+  .Slogan{ font-size: 20px; }
+  .Deks{ font-size: 16px; }
+  .judul-profile h2, .judul-program h2, .judul-pencapaian h2, .judul-fasilitas h2, .judul-kontak h2{ font-size: 26px; }
+  .grid-tj{ grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); }
+  .btn-bergabung{ padding: 1rem 2rem; }
+}
+
+@media (max-width: 480px) {
+  body{ font-size: 15px; }
+  .Main{ font-size: 24px; }
+  .Slogan{ font-size: 18px; }
+  .nav{ padding: 0.6rem 4%; }
+  .judul-logo{ font-size: 16px; }
+  .name-school{ font-size: 13px; }
+  .nav-links li a{ font-size: 14px; }
+  .hero-image img{ max-width: 320px; margin: 0 auto; }
+}
+
+/* Make embedded maps responsive */
+iframe { max-width: 100%; width: 100%; height: auto; }
+
   .media-card.fb i{ color:#1877f2; }
   .media-card.wa i{ color:#22c55e; }
 
